@@ -54,7 +54,50 @@ void setup() {
 #endif
 }
 
+
+void sparkle() {
+
+  uint8_t r1 = (uint8_t)random(0, 20);
+  uint8_t r2 = (uint8_t)random(0, 20);
+  //uint8_t r3 = (uint8_t)random(0, 20);
+
+  while(r2 == r1) {
+    r2 = (uint8_t)random(0, 20);
+  }
+
+  /*
+  while(r3 == r2 || r3 == r1) {
+    r3 = (uint8_t)random(0, 20);
+  }
+  */
+
+  display_setPixel(r1, HIGH);
+  display_setPixel(r2, HIGH);
+  //display_setPixel(r3, HIGH);
+  
+}
+
+/*
+uint32_t doSparkle() {
+  uint32_t frame = 0;
+  
+  
+}
+*/
+
 void loop() {
+
+  sparkle();
+  //delay(100);
+
+
+
+
+
+
+
+
+  
   static uint16_t i = 0, j = 0;
   uint32_t frame;
   uint32_t rawPacket;
